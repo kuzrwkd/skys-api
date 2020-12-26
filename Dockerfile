@@ -1,17 +1,14 @@
-FROM alpine:3.9
+FROM node:10-alpine
 
-COPY docker-entrypoint.sh /usr/local/bin
+COPY . /home/node/webapp
 
-RUN \
-adduser -g mongodb -DH -u 1000 mongodb; \
-apk --no-cache add mongodb=4.0.5-r0; \
-chmod +x /usr/local/bin/docker-entrypoint.sh; \
-mkdir -p /data/db; \
-chown -R mongodb:mongodb /data/db;
+RUN cd /home/node/webapp; \
+    mv docker-entrypoint.sh /usr/local/bin; \
+    chmod +x /usr/local/bin/docker-entrypoint.sh; \
+    yarn install;
 
-VOLUME /data/db
+EXPOSE 3000
 
-EXPOSE 27017
-
+WORKDIR /home/node/webapp
 ENTRYPOINT [ "docker-entrypoint.sh" ]
-CMD [ "mongod" ]
+CMD [ "npm", "start" ]

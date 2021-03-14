@@ -9,4 +9,6 @@ set -eux
 
 cd /var/www/app && \
 npm install && \
+npx tsc && \
+cp -r public/ dist/public/ && \
 pm2-runtime start ecosystem.config.js

@@ -1,5 +1,6 @@
 module.exports = {
   apps: [{
+    name: "investment-support-api",
     script : "DEBUG=app:* npm start",
     instances: 1,
     autorestart: true,

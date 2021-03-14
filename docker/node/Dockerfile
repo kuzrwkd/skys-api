@@ -1,6 +1,6 @@
 FROM node:15.11.0
 
-WORKDIR /var/www/app
+WORKDIR /var/www.ts/app
 
 COPY entrypoint.sh /
 

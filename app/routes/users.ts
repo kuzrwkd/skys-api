@@ -4,7 +4,7 @@ const router = express.Router()
 
 /* GET users listing. */
 router.get('/', function (req: Request, res: Response, next: NextFunction) {
-  res.send('{"id":1,"name":"hiroki", "age": 32}')
+  res.send('{"id":1,"name":"hoge", "age": 34}')
 })
 
 export default router

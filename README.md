@@ -11,7 +11,7 @@
 
 &nbsp;
 
-> 環境の立ち上げ手順
+> 開発環境の立ち上げ手順
 
 ```bash
 docker-compose build --no-cache

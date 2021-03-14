@@ -7,8 +7,8 @@
 
 set -eux
 
-cd /var/www/app && \
+cd /var/www && \
 npm install && \
 npx tsc && \
-cp -r public/ dist/public/ && \
+cp -r app/public/ dist/public/ && \
 pm2-runtime start ecosystem.config.js

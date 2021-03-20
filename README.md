@@ -13,6 +13,16 @@
 
 > 開発環境の立ち上げ手順
 
+① .envファイルを作成（開発用）
+```bash
+DATABASE_HOST=mysql
+DATABASE_PORT=3306
+DATABASE_NAME=sample_db
+DATABASE_USER=user
+DATABASE_PASSWORD=password
+```
+
+② dockerを起動
 ```bash
 docker-compose build --no-cache
 

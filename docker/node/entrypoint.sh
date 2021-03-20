@@ -7,7 +7,12 @@
 
 set -eux
 
-cd /var/www && \
+cd /var/www
+
+if [ -e '.env' ]; then
+  source .env
+fi
+
 npm install && \
 npx tsc
 

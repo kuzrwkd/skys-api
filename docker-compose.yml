@@ -1,7 +1,7 @@
 version: '3'
 
 services:
-  apiserver:
+  express:
     build: ./docker/node
     image: express
     tty: true
@@ -9,5 +9,3 @@ services:
       - ./:/var/www
     ports:
       - 8080:3000
-    environment:
-      NODE_ENV: development

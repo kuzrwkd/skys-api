@@ -9,12 +9,16 @@ module.exports = {
   database: env.DATABASE_NAME,
   synchronize: false,
   logging: false,
-  entities: ['app/drivers/databases/entity/**/*.ts'],
-  migrations: ['app/drivers/databases/migration/**/*.ts'],
-  subscribers: ['app/drivers/databases/subscriber/**/*.ts'],
+  entities: [`${env.APP_ROOT_DIR}/drivers/databases/entities/**/*{.ts,.js}`],
+  migrations: [`${env.APP_ROOT_DIR}/drivers/databases/migration/**/*{.ts,.js}`],
+  subscribers: [
+    `${env.APP_ROOT_DIR}/drivers/databases/subscriber/**/*{.ts,.js}`,
+  ],
+  seeds: [`${env.APP_ROOT_DIR}/drivers/databases/seeds/**/*{.ts,.js}`],
+  factories: [`${env.APP_ROOT_DIR}/drivers/databases/factories/**/*{.ts,.js}`],
   cli: {
-    entitiesDir: 'app/drivers/databases/entity',
-    migrationsDir: 'app/drivers/databases/migration',
-    subscribersDir: 'app/drivers/databases/subscriber',
+    entitiesDir: `${env.APP_ROOT_DIR}/drivers/databases/entities`,
+    migrationsDir: `${env.APP_ROOT_DIR}/drivers/databases/migration`,
+    subscribersDir: `${env.APP_ROOT_DIR}/drivers/databases/subscriber`,
   },
 }

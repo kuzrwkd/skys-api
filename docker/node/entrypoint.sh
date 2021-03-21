@@ -21,4 +21,6 @@ npm install \
 
 /wait-for-it.sh "$DATABASE_HOST":"$DATABASE_PORT" --timeout=30 --strict -- npm run typeorm migration:run
 
+npm run typeorm:seed:run
+
 npx tsc -w & pm2-runtime start ecosystem.config.js

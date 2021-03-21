@@ -5,6 +5,16 @@
   "scripts": {
     "start": "node ./dist/drivers/express/bin/www.js",
     "typeorm": "node --require ts-node/register ./node_modules/typeorm/cli.js",
+    "typeorm:migration:generate": "npm run typeorm migration:generate -- --name",
+    "typeorm:migration:create": "npm run typeorm migration:create -- --name",
+    "typeorm:migration:run": "npm run typeorm migration:run",
+    "typeorm:migration:revert": "npm run typeorm migration:revert",
+    "typeorm:seed": "ts-node ./node_modules/typeorm-seeding/dist/cli.js",
+    "typeorm:seed:config": "npm run typeorm:seed config",
+    "typeorm:seed:run": "npm run typeorm:seed seed",
+    "typeorm:schema": "ts-node ./node_modules/typeorm/cli.js",
+    "typeorm:schema:drop": "npm run typeorm:schema schema:drop",
+    "typeorm:schema:sync": "npm run typeorm:schema schema:sync",
     "test": "jest"
   },
   "dependencies": {
@@ -21,9 +31,11 @@
     "reflect-metadata": "^0.1.13",
     "routing-controllers": "^0.9.0",
     "typeorm": "^0.2.31",
+    "typeorm-seeding": "^1.6.1",
     "typescript": "^4.2.3"
   },
   "devDependencies": {
+    "@types/faker": "^5.1.7",
     "@types/jest": "^26.0.21",
     "@typescript-eslint/eslint-plugin": "^4.18.0",
     "@typescript-eslint/parser": "^4.18.0",

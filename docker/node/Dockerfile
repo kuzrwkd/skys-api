@@ -10,7 +10,8 @@ RUN chmod +x /entrypoint.sh \
     && chmod +x /wait-for-it.sh \
     && npm install -g npm \
     && npm install -g pm2 \
-    && npm install -g ts-node
+    && npm install -g ts-node \
+    && npm install -g npm-check-updates
 
 EXPOSE 3000
 

@@ -13,8 +13,11 @@ if [ -e '.env' ]; then
   source .env
 fi
 
-npm install && \
-npx tsc
+npm install \
+&& ncu \
+&& ncu -u \
+&& npm update \
+&& npx tsc
 
 /wait-for-it.sh "$DATABASE_HOST":"$DATABASE_PORT" --timeout=30 --strict -- npm run typeorm migration:run
 

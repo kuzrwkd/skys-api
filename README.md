@@ -20,6 +20,7 @@ DATABASE_PORT=3306
 DATABASE_NAME=sample_db
 DATABASE_USER=user
 DATABASE_PASSWORD=password
+APP_ROOT_DIR=app
 ```
 
 ② dockerを起動

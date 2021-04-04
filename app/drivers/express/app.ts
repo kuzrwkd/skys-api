@@ -3,9 +3,7 @@ import path from 'path'
 import cookieParser from 'cookie-parser'
 import logger from 'morgan'
 import 'reflect-metadata'
-
 import usersRouter from './routes/users'
-
 const app = express()
 
 app.use(logger('dev'))

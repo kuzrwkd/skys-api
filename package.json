@@ -15,7 +15,11 @@
     "typeorm:schema": "ts-node ./node_modules/typeorm/cli.js",
     "typeorm:schema:drop": "npm run typeorm:schema schema:drop",
     "typeorm:schema:sync": "npm run typeorm:schema schema:sync",
-    "test": "jest"
+    "test": "jest",
+    "docker:build": "docker-compose build --no-cache",
+    "docker:up": "docker-compose up -d",
+    "docker:down": "docker-compose down",
+    "docker:rmi": "docker rmi -f investment-support-api:express investment-support-api:mysql5.7"
   },
   "dependencies": {
     "@types/body-parser": "^1.19.0",

@@ -3,8 +3,8 @@ version: '3'
 services:
   express:
     build: ./docker/node
-    image: express
-    container_name: express-app
+    image: investment-support-api:express
+    container_name: app
     tty: true
     volumes:
       - ./:/var/www
@@ -15,7 +15,7 @@ services:
 
   mysql:
     build: ./docker/mysql
-    image: mysql:5.7
+    image: investment-support-api:mysql5.7
     container_name: mysql
     environment:
       MYSQL_ROOT_PASSWORD: password

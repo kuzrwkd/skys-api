@@ -1,4 +1,4 @@
-# investment-support-api-for-express
+# SKY API
 
 ![logo](./brand/express.jpg "ロゴ")
 

@@ -2,8 +2,8 @@ version: '3'
 
 services:
   express:
-    build: ./docker/node
-    image: investment-support-api:express
+    build: ../node/docker
+    image: skys-api:app
     container_name: app
     tty: true
     volumes:
@@ -14,8 +14,8 @@ services:
       - mysql
 
   mysql:
-    build: ./docker/mysql
-    image: investment-support-api:mysql5.7
+    build: ../mysql/docker
+    image: skys-api:mysql5.7
     container_name: mysql
     environment:
       MYSQL_ROOT_PASSWORD: password
@@ -23,6 +23,6 @@ services:
     ports:
       - 3306:3306
     volumes:
-      - ./docker/mysql/initdb.d:/docker-entrypoint-initdb.d
-      - ./docker/mysql/conf.d:/etc/mysql/conf.d
+      - ../mysql/docker/initdb.d:/docker-entrypoint-initdb.d
+      - ../mysql/docker/conf.d:/etc/mysql/conf.d
       - ./log/mysql:/var/log/mysql

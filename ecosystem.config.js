@@ -1,19 +1,12 @@
 module.exports = {
   apps: [
     {
-      name: 'investment-support-api',
-      script: 'DEBUG=app:* npm start',
+      name: 'skys-api',
+      script: 'dist/main.js',
       instances: 1,
       autorestart: true,
-      restart_delay: 5000,
-      watch: ['dist'],
-      watch_delay: 1000,
-      watch_options: {
-        followSymlinks: false,
-      },
-      env: {
-        NODE_ENV: 'development',
-      },
+      watch: false,
+      max_memory_restart: '1G',
       env_production: {
         NODE_ENV: 'production',
       },

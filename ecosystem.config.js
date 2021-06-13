@@ -1,7 +1,7 @@
 module.exports = {
   apps: [
     {
-      name: 'skys-api',
+      name: 'skys-client-api',
       script: 'dist/main.js',
       instances: 1,
       autorestart: true,

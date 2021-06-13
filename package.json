@@ -18,11 +18,7 @@
     "test:watch": "node_modules/.bin/jest --watch",
     "test:cov": "node_modules/.bin/jest --coverage",
     "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",
-    "test:e2e": "node_modules/.bin/jest --config ./test/jest-e2e.json",
-    "docker:build": "docker-compose build --no-cache",
-    "docker:up": "docker-compose up -d",
-    "docker:down": "docker-compose down",
-    "docker:rmi": "docker rmi -f skys-api:app skys-api:mysql5.7"
+    "test:e2e": "node_modules/.bin/jest --config ./test/jest-e2e.json"
   },
   "dependencies": {
     "@nestjs/common": "^7.6.17",

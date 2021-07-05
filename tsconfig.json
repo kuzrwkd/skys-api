@@ -6,13 +6,17 @@
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "allowSyntheticDefaultImports": true,
-    "target": "es2017",
+    "target": "es2020",
     "sourceMap": true,
     "outDir": "./dist",
     "baseUrl": "./",
     "paths": {
       "@/*": ["src/*"]
     },
-    "incremental": true
+    "typeRoots" : ["./node_modules/@types",
+      "./src/Tools/@types"
+    ],
+    "incremental": true,
+    "esModuleInterop": true
   }
 }

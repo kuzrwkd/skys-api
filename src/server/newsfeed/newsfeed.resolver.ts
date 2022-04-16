@@ -7,7 +7,7 @@ export class NewsfeedResolver {
   constructor(private newsfeedService: NewsfeedService) {}
 
   @Query(() => [Newsfeed], { nullable: 'items' })
-  findAll() {
+  newsfeed() {
     return this.newsfeedService.findAll();
   }
 }

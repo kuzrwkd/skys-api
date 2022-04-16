@@ -12,8 +12,8 @@ export class NewsfeedService {
         id: 1,
         name: '日本経済新聞',
       },
-      articleCreatedAt: '2021-07-25T03:00:00.000Z',
-      articleUpdatedAt: '',
+      article_created_at: '2021-07-25T03:00:00.000Z',
+      article_updated_at: '',
     },
     {
       id: '1',
@@ -23,8 +23,8 @@ export class NewsfeedService {
         id: 1,
         name: '日本経済新聞',
       },
-      articleCreatedAt: '2021-07-25T03:00:00.000Z',
-      articleUpdatedAt: '',
+      article_created_at: '2021-07-25T03:00:00.000Z',
+      article_updated_at: '2021-07-25T09:00:00.000Z',
     },
   ];
 

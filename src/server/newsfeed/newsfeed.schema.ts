@@ -24,8 +24,8 @@ export class Newsfeed {
   organization!: Organization;
 
   @Field(() => String)
-  articleCreatedAt!: string;
+  article_created_at!: string;
 
   @Field(() => String)
-  articleUpdatedAt!: string;
+  article_updated_at!: string;
 }

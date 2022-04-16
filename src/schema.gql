@@ -3,8 +3,8 @@
 # ------------------------------------------------------
 
 type Newsfeed {
-  articleCreatedAt: String!
-  articleUpdatedAt: String!
+  article_created_at: String!
+  article_updated_at: String!
   id: ID!
   organization: Organization!
   title: String!
@@ -17,5 +17,5 @@ type Organization {
 }
 
 type Query {
-  findAll: [Newsfeed]!
+  newsfeed: [Newsfeed]!
 }

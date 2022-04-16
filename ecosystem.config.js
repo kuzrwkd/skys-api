@@ -2,7 +2,7 @@ module.exports = {
   apps: [
     {
       name: 'skys-api-app-pod',
-      script: 'dist/main.js',
+      script: 'dist/server/main.js',
       instances: 1,
       autorestart: true,
       watch: false,

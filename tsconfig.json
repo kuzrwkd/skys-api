@@ -13,8 +13,9 @@
     "paths": {
       "@/*": ["src/*"]
     },
-    "typeRoots" : ["./node_modules/@types",
-      "./src/Tools/@types"
+    "typeRoots" : [
+      "./node_modules/@types",
+      "./src/types"
     ],
     "skipLibCheck": true,
     "incremental": true,

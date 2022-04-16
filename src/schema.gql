@@ -1,0 +1,21 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type Newsfeed {
+  articleCreatedAt: String!
+  articleUpdatedAt: String!
+  id: ID!
+  organization: Organization!
+  title: String!
+  url: String!
+}
+
+type Organization {
+  id: ID!
+  name: String
+}
+
+type Query {
+  findAll: [Newsfeed]!
+}

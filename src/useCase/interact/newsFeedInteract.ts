@@ -30,7 +30,6 @@ export class NewsFeedInteract {
 
       if (item.organization_id === 1) {
         res.push({ ...baseParams, organization: { id: organizationId, name: organizationName } });
-        console.log({ ...baseParams, organization: { id: organizationId, name: organizationName } });
       }
     });
 

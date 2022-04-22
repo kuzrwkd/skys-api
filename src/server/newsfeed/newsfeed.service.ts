@@ -1,4 +1,5 @@
 import { Injectable } from '@nestjs/common';
+
 import newsFeedUseCase from '@/useCase/newsFeedUseCase';
 
 @Injectable()

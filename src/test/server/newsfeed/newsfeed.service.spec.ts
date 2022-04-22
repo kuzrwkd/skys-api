@@ -1,4 +1,5 @@
 import { Test, TestingModule } from '@nestjs/testing';
+
 import { NewsfeedService } from '@/server/newsfeed/newsfeed.service';
 
 describe('NewsfeedService', () => {

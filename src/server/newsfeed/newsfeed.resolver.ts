@@ -1,6 +1,7 @@
 import { Query, Resolver } from '@nestjs/graphql';
-import { NewsfeedService } from '@/server/newsfeed/newsfeed.service';
+
 import { Newsfeed } from '@/server/newsfeed/newsfeed.schema';
+import { NewsfeedService } from '@/server/newsfeed/newsfeed.service';
 
 @Resolver()
 export class NewsfeedResolver {

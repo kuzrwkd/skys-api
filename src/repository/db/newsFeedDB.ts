@@ -1,12 +1,6 @@
-/**
- * Lib
- */
 import { GetCommand, GetCommandInput, ScanCommand, ScanCommandInput } from '@aws-sdk/lib-dynamodb';
 import { injectable } from 'tsyringe';
 
-/**
- * Utils
- */
 import { dynamodbDocument } from '@/util/dynamoDBClient';
 
 @injectable()

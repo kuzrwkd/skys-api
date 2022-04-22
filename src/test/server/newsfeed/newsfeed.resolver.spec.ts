@@ -1,4 +1,5 @@
 import { Test, TestingModule } from '@nestjs/testing';
+
 import { NewsfeedResolver } from '@/server/newsfeed/newsfeed.resolver';
 
 describe('NewsfeedResolver', () => {

@@ -11,7 +11,7 @@ export class NewsFeedDB {
       // const startTime = processStartTime();
 
       const command: GetCommandInput = {
-        TableName: process.env.MEDIA_ORGANIZATION_TABLE_NAME,
+        TableName: process.env.MEDIA_TABLE_NAME,
         Key: {
           id: organizationId,
         },

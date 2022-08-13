@@ -9,7 +9,7 @@ export class NewsFeedInteract {
 
   async handle() {
     const res = [];
-    const { name: organizationName, id: organizationId } = await this.NewsFeedDB.getOrganizationById(1);
+    const { name: mediaName, id: mediaId } = await this.NewsFeedDB.getMediaById(1);
     const result = await this.NewsFeedDB.scanNewsFeed();
 
     result.forEach((item: DB.NewsFeedTableSchema) => {
@@ -17,7 +17,7 @@ export class NewsFeedInteract {
         id: item.id,
         title: item.title,
         url: item.url,
-        organization: {
+        media: {
           id: null,
           name: '',
         },
@@ -25,9 +25,7 @@ export class NewsFeedInteract {
         article_updated_at: item.article_updated_at,
       };
 
-      if (item.organization_id === 1) {
-        res.push({ ...baseParams, organization: { id: organizationId, name: organizationName } });
-      }
+      res.push({ ...baseParams, media: { id: mediaName, name: mediaName } });
     });
 
     return res;

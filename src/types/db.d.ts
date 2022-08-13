@@ -4,5 +4,5 @@ declare namespace DB {
     updated_at?: string;
   };
 
-  type NewsFeedTableSchema = Omit<Entity, 'organization'> & { organization_id: number } & CreateAndUpdateColumn;
+  type NewsFeedTableSchema = Omit<Entity, 'media'> & { media_id: number } & CreateAndUpdateColumn;
 }

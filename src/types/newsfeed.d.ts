@@ -3,12 +3,12 @@ declare namespace NewsFeed {
     id: string;
     title: string;
     url: string;
-    organization: Organization;
+    media: Media;
     article_created_at: string;
     article_updated_at?: string;
   };
 
-  type Organization = {
+  type Media = {
     id: number;
     name?: string;
   };
@@ -23,7 +23,7 @@ declare namespace NewsFeed {
   }
 
   interface INewsFeedDB {
-    getOrganizationById(organization_id: number): Promise<NewsFeed.Organization>;
+    getMediaById(media_id: number): Promise<NewsFeed.Media>;
     scanNewsFeed(): Promise<DB.NewsFeedTableSchema>;
   }
 }

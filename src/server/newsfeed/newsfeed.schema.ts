@@ -1,7 +1,7 @@
 import { Field, ID, ObjectType } from '@nestjs/graphql';
 
 @ObjectType()
-export class Organization {
+export class Media {
   @Field(() => ID)
   id!: number;
 
@@ -20,8 +20,8 @@ export class Newsfeed {
   @Field(() => String)
   url!: string;
 
-  @Field(() => Organization)
-  organization!: Organization;
+  @Field(() => Media)
+  media!: Media;
 
   @Field(() => String)
   article_created_at!: string;

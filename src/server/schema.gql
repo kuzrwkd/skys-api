@@ -2,18 +2,18 @@
 # THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
 # ------------------------------------------------------
 
+type Media {
+  id: ID!
+  name: String
+}
+
 type Newsfeed {
   article_created_at: String!
   article_updated_at: String!
   id: ID!
-  organization: Organization!
+  media: Media!
   title: String!
   url: String!
-}
-
-type Organization {
-  id: ID!
-  name: String
 }
 
 type Query {

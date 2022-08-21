@@ -1,13 +1,17 @@
 import { Injectable } from '@nestjs/common';
 
-import newsFeedUseCase from '@/useCase/newsFeedUseCase';
+import newsFeedUseCase, { INewsFeedInteract, APIResponseItem } from '@/useCase/newsFeedUseCase';
+
+export interface INewsfeedService {
+  findAll(): Promise<APIResponseItem[]>;
+}
 
 @Injectable()
-export class NewsfeedService {
-  private newsFeedInteract: NewsFeed.INewsFeedInteract;
+export class NewsfeedService implements INewsfeedService {
+  private newsFeedInteract: INewsFeedInteract;
 
   constructor() {
-    this.newsFeedInteract = newsFeedUseCase.resolve<NewsFeed.INewsFeedInteract>('NewsFeedInteract');
+    this.newsFeedInteract = newsFeedUseCase.resolve<INewsFeedInteract>('NewsFeedInteract');
   }
 
   findAll() {

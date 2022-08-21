@@ -44,7 +44,7 @@ jobs:
           command: npm run build
       - run:
           name: "単体テストを実行"
-          command: npm run test
+          command: npm run __test__
   deploy:
     executor:
       name: default
@@ -65,4 +65,4 @@ workflows:
             - setup
       - deploy:
           requires:
-            - test
+            - __test__

@@ -10,6 +10,7 @@ type Media {
 type Newsfeed {
   article_created_at: String!
   article_updated_at: String!
+  category: String!
   id: ID!
   media: Media!
   title: String!

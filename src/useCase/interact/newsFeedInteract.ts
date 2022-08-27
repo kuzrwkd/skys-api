@@ -1,9 +1,4 @@
-import dynamodbUseCase, {
-  MediaTableUseCase,
-  IMediaTableUseCase,
-  NewsfeedTableUseCase,
-  INewsfeedTableUseCase,
-} from '@kuzrwkd/skys-core/dynamodb';
+import dynamodbUseCase, { IMediaTableUseCase, INewsfeedTableUseCase } from '@kuzrwkd/skys-core/dynamodb';
 import { NewsfeedSchema } from '@kuzrwkd/skys-core/entities';
 import { injectable } from 'tsyringe';
 
@@ -19,8 +14,8 @@ export class NewsFeedInteract {
   private newsfeedTableUseCase: INewsfeedTableUseCase;
 
   constructor() {
-    this.mediaTableUseCase = dynamodbUseCase.resolve<MediaTableUseCase>('MediaTableUseCase');
-    this.newsfeedTableUseCase = dynamodbUseCase.resolve<NewsfeedTableUseCase>('NewsfeedTableUseCase');
+    this.mediaTableUseCase = dynamodbUseCase.resolve<IMediaTableUseCase>('MediaTableUseCase');
+    this.newsfeedTableUseCase = dynamodbUseCase.resolve<INewsfeedTableUseCase>('NewsfeedTableUseCase');
   }
 
   async handle() {
@@ -37,6 +32,7 @@ export class NewsFeedInteract {
           id: null,
           name: '',
         },
+        category: item.category,
         article_created_at: item.article_created_at,
         article_updated_at: item.article_updated_at,
         created_at: item.created_at,

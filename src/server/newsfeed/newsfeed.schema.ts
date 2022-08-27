@@ -20,6 +20,9 @@ export class Newsfeed {
   @Field(() => String)
   url!: string;
 
+  @Field(() => String)
+  category: string;
+
   @Field(() => Media)
   media!: Media;
 

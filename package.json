@@ -22,7 +22,7 @@
     "test:e2e": "node_modules/.bin/jest --config jest-e2e.json"
   },
   "dependencies": {
-    "@kuzrwkd/skys-core": "^1.0.64",
+    "@kuzrwkd/skys-core": "^1.0.68",
     "@nestjs/apollo": "^10.0.22",
     "@nestjs/common": "^9.0.11",
     "@nestjs/core": "^9.0.0",

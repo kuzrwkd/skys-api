@@ -3,7 +3,7 @@ import { Field, ID, ObjectType } from '@nestjs/graphql';
 @ObjectType()
 export class Media {
   @Field(() => ID)
-  id!: number;
+  media_id!: number;
 
   @Field(() => String, { nullable: true })
   name!: string | null;

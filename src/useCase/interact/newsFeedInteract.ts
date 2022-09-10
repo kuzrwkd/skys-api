@@ -20,7 +20,11 @@ export class NewsFeedInteract {
 
   async handle() {
     const res = [];
-    const { name: mediaName, id: mediaId } = await this.mediaTableUseCase.getMediaById(1);
+    const {
+      id: mediaRecordId,
+      name: mediaName,
+      media_id: mediaId,
+    } = await this.mediaTableUseCase.queryMediaByMediaId(1);
     const result = await this.newsfeedTableUseCase.scanNewsfeed();
 
     result.forEach((item: NewsfeedSchema) => {
@@ -29,7 +33,7 @@ export class NewsFeedInteract {
         title: item.title,
         url: item.url,
         media: {
-          id: null,
+          media_id: null,
           name: '',
         },
         category: item.category,
@@ -39,7 +43,7 @@ export class NewsFeedInteract {
         updated_at: item.updated_at,
       };
 
-      res.push({ ...baseParams, media: { id: mediaId, name: mediaName } });
+      res.push({ ...baseParams, media: { id: mediaRecordId, media_id: mediaId, name: mediaName } });
     });
 
     return res;

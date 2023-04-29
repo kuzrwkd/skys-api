@@ -1,4 +1,4 @@
-FROM node:16.10-slim
+FROM node:18.15-slim
 
 WORKDIR /var/www
 
@@ -30,11 +30,6 @@ COPY docker/prd.entrypoint.sh /usr/local/bin
 COPY docker/wait-for-it.sh /usr/local/bin
 
 RUN chmod +x /usr/local/bin/prd.entrypoint.sh \
-    && chmod +x /usr/local/bin/wait-for-it.sh \
-    && npm install -g npm \
-    && npm install -g pm2 \
-    && npm install -g ts-node \
-    && npm install -g npm-check-updates \
-    && npm install -g @nestjs/cli
+    && chmod +x /usr/local/bin/wait-for-it.sh
 
 ENTRYPOINT ["/usr/local/bin/prd.entrypoint.sh"]

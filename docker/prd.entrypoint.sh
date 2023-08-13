@@ -10,7 +10,6 @@ set -eux
 cd /var/www
 
 npm cache clean -f
-npm install -g npm@latest pm2 ts-node @nestjs/cli
 npm install
 npm run build
 

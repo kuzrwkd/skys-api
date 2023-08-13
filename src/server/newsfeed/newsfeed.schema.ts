@@ -1,11 +1,11 @@
-import { Field, ID, ObjectType } from '@nestjs/graphql';
+import {Field, ID, ObjectType} from '@nestjs/graphql';
 
 @ObjectType()
 export class Media {
   @Field(() => ID)
-  media_id!: number;
+  id!: string;
 
-  @Field(() => String, { nullable: true })
+  @Field(() => String, {nullable: true})
   name!: string | null;
 }
 

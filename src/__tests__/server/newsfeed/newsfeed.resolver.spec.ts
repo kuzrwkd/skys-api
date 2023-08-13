@@ -1,6 +1,5 @@
-import { Test, TestingModule } from '@nestjs/testing';
-
-import { NewsfeedResolver } from '@/server/newsfeed/newsfeed.resolver';
+import {Test, TestingModule} from '@nestjs/testing';
+import {NewsfeedResolver} from '@/server/newsfeed/newsfeed.resolver';
 
 describe('NewsfeedResolver', () => {
   let resolver: NewsfeedResolver;

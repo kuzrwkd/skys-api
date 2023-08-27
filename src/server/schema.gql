@@ -2,15 +2,20 @@
 # THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
 # ------------------------------------------------------
 
+type Category {
+  id: ID!
+  name: String!
+}
+
 type Media {
   id: ID!
-  name: String
+  name: String!
 }
 
 type Newsfeed {
   article_created_at: String!
   article_updated_at: String!
-  category: String!
+  category: [Category!]!
   id: ID!
   media: Media!
   title: String!

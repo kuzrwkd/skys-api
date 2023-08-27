@@ -1,4 +1,4 @@
-import {mediaTable, newsfeedTable} from '@kuzrwkd/skys-core/dynamodb';
+import {mediaTable, newsfeedTable, categoryTable} from '@kuzrwkd/skys-core/dynamodb';
 import {NewsfeedSchema} from '@kuzrwkd/skys-core/entities';
 import {injectable} from 'tsyringe';
 import {APIResponseItem} from '@/useCase/newsFeedUseCase';
@@ -10,22 +10,32 @@ export interface INewsFeedInteract {
 @injectable()
 export class NewsFeedInteract {
   async handle() {
-    const res = [];
-    const {name: mediaName, id} = await mediaTable.getMediaItemByMediaId(1);
-    const result = await newsfeedTable.getNewsfeedAllItems();
-
-    result.forEach((item: NewsfeedSchema) => {
-      const baseParams: APIResponseItem = {
-        ...item,
-        media: {
-          id,
-          name: mediaName,
-        },
-      };
-
-      res.push({...baseParams, media: {id, name: mediaName}});
+    const [categoryAllItems, newsfeedAllItems, mediaAllItems] = await Promise.all([
+      categoryTable.getCategoryAllItems(),
+      newsfeedTable.getAllItems(),
+      mediaTable.getMediaAllItems(),
+    ]).catch(error => {
+      throw new Error(error.message);
     });
 
-    return res;
+    return newsfeedAllItems.map((item: NewsfeedSchema) => {
+      const mediaData = mediaAllItems.find(_ => item.media_id === _.media_id);
+      const baseParams: APIResponseItem = {
+        ...item,
+        media: {id: mediaData.id, name: mediaData.name},
+        category: categoryAllItems.reduce((acc, _) => {
+          if (item.category_ids.includes(_.category_id)) {
+            acc.push({id: _.id, name: _.name});
+          }
+          return acc;
+        }, []),
+      };
+
+      return {
+        ...baseParams,
+        media: baseParams.media,
+        category: baseParams.category,
+      };
+    });
   }
 }

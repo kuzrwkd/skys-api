@@ -5,8 +5,17 @@ export class Media {
   @Field(() => ID)
   id!: string;
 
-  @Field(() => String, {nullable: true})
-  name!: string | null;
+  @Field(() => String)
+  name!: string;
+}
+
+@ObjectType()
+export class Category {
+  @Field(() => ID)
+  id!: string;
+
+  @Field(() => String)
+  name!: string;
 }
 
 @ObjectType()
@@ -20,8 +29,8 @@ export class Newsfeed {
   @Field(() => String)
   url!: string;
 
-  @Field(() => String)
-  category: string;
+  @Field(() => [Category])
+  category!: [Category];
 
   @Field(() => Media)
   media!: Media;

@@ -11,9 +11,9 @@ export interface INewsFeedInteract {
 export class NewsFeedInteract {
   async handle() {
     const [categoryAllItems, newsfeedAllItems, mediaAllItems] = await Promise.all([
-      categoryTable.getCategoryAllItems(),
+      categoryTable.getAllItems(),
       newsfeedTable.getAllItems(),
-      mediaTable.getMediaAllItems(),
+      mediaTable.getAllItems(),
     ]).catch(error => {
       throw new Error(error.message);
     });

@@ -1,4 +1,4 @@
-FROM node:20.10-slim
+FROM node:20.10.0-slim
 
 WORKDIR /var/www
 

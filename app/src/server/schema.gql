@@ -13,12 +13,13 @@ type Media {
 }
 
 type Newsfeed {
-  article_created_at: String!
-  article_updated_at: String!
   category: [Category!]!
+  created_at: Float!
   id: ID!
+  last_publish_date: Float!
   media: Media!
   title: String!
+  updated_at: Float!
   url: String!
 }
 

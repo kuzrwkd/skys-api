@@ -1,8 +1,10 @@
 import {Injectable} from '@nestjs/common';
-import newsFeedUseCase, {INewsFeedInteract, APIResponseItem} from '@/useCase/newsFeedUseCase';
+import type {INewsFeedInteract} from '@/useCase';
+import type {NewsfeedPresentation} from '@kuzrwkd/skys-core/entities';
+import {container} from '@/useCase';
 
 export interface INewsfeedService {
-  findAll(): Promise<APIResponseItem[]>;
+  findAll(): Promise<NewsfeedPresentation>;
 }
 
 @Injectable()
@@ -10,7 +12,7 @@ export class NewsfeedService implements INewsfeedService {
   private newsFeedInteract: INewsFeedInteract;
 
   constructor() {
-    this.newsFeedInteract = newsFeedUseCase.resolve<INewsFeedInteract>('NewsFeedInteract');
+    this.newsFeedInteract = container.resolve<INewsFeedInteract>('NewsFeedInteract');
   }
 
   findAll() {

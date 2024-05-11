@@ -1,10 +1,10 @@
 import {Query, Resolver} from '@nestjs/graphql';
+import type {NewsfeedPresentation} from '@kuzrwkd/skys-core/entities';
 import {Newsfeed} from '@/server/newsfeed/newsfeed.schema';
 import {NewsfeedService} from '@/server/newsfeed/newsfeed.service';
-import {APIResponseItem} from '@/useCase/newsFeedUseCase';
 
 export interface INewsfeedResolver {
-  newsfeed(): Promise<APIResponseItem[]>;
+  newsfeed(): Promise<NewsfeedPresentation>;
 }
 
 @Resolver()

@@ -35,9 +35,12 @@ export class Newsfeed {
   @Field(() => Media)
   media!: Media;
 
-  @Field(() => String)
-  article_created_at!: string;
+  @Field(() => Number)
+  last_publish_date!: number;
 
-  @Field(() => String)
-  article_updated_at!: string;
+  @Field(() => Number)
+  created_at!: number;
+
+  @Field(() => Number)
+  updated_at!: number;
 }

@@ -5,7 +5,7 @@ include envfile
 # build dev image
 #
 build-dev-api:
-	cd ${SKYS_API_ROOT_PATH} && docker build --no-cache -t dev-skys-api -f docker/dev.dockerfile .
+	docker build --no-cache -t dev-skys-api -f docker/dev.dockerfile .
 
 ##
 # clean dev image

@@ -27,9 +27,6 @@ RUN apt-get update \
 
 COPY docker/prd.entrypoint.sh /usr/local/bin
 
-COPY docker/wait-for-it.sh /usr/local/bin
-
-RUN chmod +x /usr/local/bin/prd.entrypoint.sh \
-    && chmod +x /usr/local/bin/wait-for-it.sh
+RUN chmod +x /usr/local/bin/prd.entrypoint.sh
 
 ENTRYPOINT ["/usr/local/bin/prd.entrypoint.sh"]

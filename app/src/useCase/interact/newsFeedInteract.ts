@@ -13,7 +13,7 @@ export class NewsFeedInteract implements INewsFeedInteract {
     try {
       const masterData = await master.get();
       if (masterData) {
-        const newsfeed = await newsfeedIndex.getMatchAllDocument();
+        const newsfeed = await newsfeedIndex.getDocumentByQueryMatchAll();
         const {mediaAllItems, categoryAllItems} = masterData;
         const result = newsfeed.hits.hits.map(item => {
           const mediaData = mediaAllItems.find(_ => item._source.media_id === _.media_id);
